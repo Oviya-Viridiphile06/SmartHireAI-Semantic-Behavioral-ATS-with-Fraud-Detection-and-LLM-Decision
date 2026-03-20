@@ -73,11 +73,60 @@ This modular architecture ensures scalability, explainability, and precise autom
 - **Email Automation:** Sends candidate notifications directly from the system.
 - **Interactive Dashboard:** Displays evaluation metrics, score distributions, and candidate insights.
 
-## **Sample Output**
+## **ATS Dashboard Preview**
 
-- **Candidate Table:** Shows candidate name, score, experience, fraud status, final decision, and skill gap.
-- **Metrics:** Total candidates, shortlisted, rejected due to skill gaps, fraud detected.
-- **Visualizations:**
-  - Donut chart showing candidate distribution
-  - Bar chart comparing scores and highlighting selection threshold
-  - Score distribution histogram
+### **1. Input Section**
+
+This section allows HR to provide the Job Description, required skills, and minimum experience, and upload multiple candidate resumes. Once submitted, the system automatically evaluates all candidates.
+<p align="center">
+  <img src="Output/Input.png" width="50%">
+</p>
+
+### **2. Candidate Evaluation Table**
+
+Displays all candidates with:
+ - **Score** – combined evaluation of skills, experience, and semantic matching
+ - **Experience** – extracted from resumes
+ - **Fraud** – flags for repeated keywords or hidden text
+ - **Status** – Shortlisted or Rejected
+ - **Reason** – explanation for rejection or skill gaps
+<p align="center">
+  <img src="Output/Candidate Evaluation Table.png" width="50%">
+</p>
+
+### **3. Candidate Distribution**
+
+A *donut chart* showing the overall evaluation outcome:
+ - **Shortlisted** – candidates meeting requirements.
+ - **Skill Gap** – rejected due to missing skills.
+ - **Fraud Detected** – flagged for manipulative content.
+Gives an instant overview of candidate quality.
+<p align="center">
+  <img src="Output/Candidate Distribution.png" width="50%">
+</p>
+
+### 4. **Candidate Score Comparison**
+
+A *bar chart* comparing candidate scores against the selection threshold:
+ - Highlights top performers and borderline candidates.
+ - Helps HR prioritize interviews efficiently.
+<p align="center">
+  <img src="Output/Candidate Score Comparison.png" width="50%">
+</p>
+
+### **5. Score Distribution**
+
+A *histogram* showing the spread of candidate scores across ranges (0–20, 21–40, etc.):
+ - Visualizes the proportion of weak, average, and strong candidates.
+ - Supports data-driven decision-making for large applicant pools.
+<p align="center">
+  <img src="Output/Score Distribution.png" width="50%">
+</p>
+
+## **Conclusion**
+
+SmartHireAI offers a next-generation recruitment pipeline, combining semantic evaluation, behavioral scoring, RAG-enhanced assessment, fraud detection, and LLM decision support. It ensures fair, transparent, and efficient candidate shortlisting, reducing HR workload while improving hiring accuracy.
+
+
+## **AUTHOR✍🏼**
+**OVIYA MAHESWARI N**
