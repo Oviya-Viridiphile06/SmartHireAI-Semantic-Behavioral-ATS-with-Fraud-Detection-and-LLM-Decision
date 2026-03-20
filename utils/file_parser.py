@@ -7,7 +7,7 @@ def extract_text(file):
 
     text = ""
 
-    # -------- PDF --------
+    # PDF
     if file.name.endswith(".pdf"):
 
         with pdfplumber.open(file) as pdf:
@@ -19,7 +19,7 @@ def extract_text(file):
                 if page_text:
                     text += page_text + "\n"
 
-    # -------- DOCX --------
+    # DOCX
     elif file.name.endswith(".docx"):
 
         doc = docx.Document(file)
@@ -27,7 +27,7 @@ def extract_text(file):
         for para in doc.paragraphs:
             text += para.text + "\n"
 
-    # -------- CLEAN TEXT --------
+    # CLEAN TEXT
     text = re.sub(r'[ \t]+', ' ', text)
 
     return text
