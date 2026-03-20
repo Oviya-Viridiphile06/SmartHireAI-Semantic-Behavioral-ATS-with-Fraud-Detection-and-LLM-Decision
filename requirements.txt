@@ -1,0 +1,10 @@
+streamlit
+pandas
+plotly
+pdfplumber
+python-docx
+sentence-transformers
+scikit-learn
+pymupdf
+groq
+pdfminer.six
