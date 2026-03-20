@@ -1,13 +1,25 @@
+# Python bytecode
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# Virtual environment
 venv/
 env/
 *.env
+
+# Databases
 *.db
 *.sqlite3
+
+# OS / editor files
 .DS_Store
 Thumbs.db
-.streamlit/
+
+# Streamlit logs — but keep config.toml
+.streamlit/*
+!.streamlit/config.toml
+
+# Logs
 *.log
