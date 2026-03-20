@@ -3,7 +3,6 @@ from sentence_transformers import SentenceTransformer, util
 # Load model once globally
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-
 def semantic_similarity(resume, jd):
 
     emb1 = model.encode(resume, convert_to_tensor=True)
@@ -12,4 +11,3 @@ def semantic_similarity(resume, jd):
     score = util.cos_sim(emb1, emb2)
 
     return round(float(score) * 100, 2)
-
