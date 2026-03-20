@@ -1,12 +1,12 @@
-# **SmartHireAI - Semantic & Behavioral ATS with Fraud Detection and LLM Decision**
+# ✨ SmartHireAI - Semantic & Behavioral ATS with Fraud Detection and LLM Decision
 
-## **Introduction**
+## 💡 Introduction
 
 Recruiting top talent efficiently is a critical challenge for modern organizations. Traditional ATS systems often rely on keyword matching alone, leading to missed high-potential candidates or false positives due to keyword stuffing and resume manipulations.
 
 SmartHireAI is an AI-driven multi-agent recruitment system that combines semantic analysis, hybrid scoring, behavioral evaluation, and fraud detection to assess candidate resumes against job descriptions accurately. It automates shortlisting, highlights skill gaps, detects fraudulent resume patterns, and provides a robust decision-making pipeline enhanced with a borderline LLM intelligence layer.
 
-## **Problem Statement**
+## 🎯 Problem Statement
 
 Organizations face challenges such as:
  - Candidates stuffing resumes with irrelevant keywords to bypass automated systems.
@@ -17,7 +17,7 @@ Organizations face challenges such as:
 
 SmartHireAI addresses these gaps with an end-to-end intelligent evaluation system, ensuring accurate shortlisting while flagging fraudulent or poorly formatted resumes.
 
-## **Multi-Agent System Overview**
+## 🤖 Multi-Agent System Overview
 
 SmartHireAI adopts a multi-agent architecture, where each agent has a specialized role:
  - **Resume Agent** – Preprocesses and cleans candidate resumes, extracts emails, names, and relevant information.
@@ -29,7 +29,7 @@ SmartHireAI adopts a multi-agent architecture, where each agent has a specialize
 
 This modular architecture ensures scalability, explainability, and precise automation, mimicking human recruitment workflows with AI accuracy.
 
-## **System Architecture & Workflow**
+## ⚙️ System Architecture & Workflow
 
 1. Resume Preprocessing
     - Resumes are cleaned, normalized, and prepared for analysis.
@@ -50,7 +50,7 @@ This modular architecture ensures scalability, explainability, and precise autom
 8. Email Notification
     - Automated candidate communication triggered with personalized feedback.
   
-## **Technology Stack**
+## 🛠️ Technology Stack
 
 - **Programming Language:** Python 3.11+
 - **Frontend & Visualization:** Streamlit + Plotly
@@ -64,7 +64,7 @@ This modular architecture ensures scalability, explainability, and precise autom
 - **Fraud Detection:** `PyMuPDF` + PDF heuristics for hidden/invisible text and repeated keywords
 - **Email Notifications:** `smtplib` with secure environment variables
 
-## **Key Features**
+## 🔑 Key Features
 
 - **Hybrid Scoring:** Combines keyword, context, experience, and semantic similarity for robust evaluation.
 - **RAG-style Relevance:** Focused semantic analysis on top resume chunks for precise matching.
@@ -73,7 +73,7 @@ This modular architecture ensures scalability, explainability, and precise autom
 - **Email Automation:** Sends candidate notifications directly from the system.
 - **Interactive Dashboard:** Displays evaluation metrics, score distributions, and candidate insights.
 
-## **ATS Dashboard Preview**
+## 📶 ATS Dashboard Preview
 
 ### **1. Input Section**
 
@@ -123,10 +123,10 @@ A *histogram* showing the spread of candidate scores across ranges (0–20, 21�
   <img src="Output/Score Distribution.png" width="50%">
 </p>
 
-## **Conclusion**
+## 🏁 Conclusion
 
 SmartHireAI offers a next-generation recruitment pipeline, combining semantic evaluation, behavioral scoring, RAG-enhanced assessment, fraud detection, and LLM decision support. It ensures fair, transparent, and efficient candidate shortlisting, reducing HR workload while improving hiring accuracy.
 
 
-## **AUTHOR✍🏼**
+## ✍🏼 AUTHOR
 **OVIYA MAHESWARI N**
