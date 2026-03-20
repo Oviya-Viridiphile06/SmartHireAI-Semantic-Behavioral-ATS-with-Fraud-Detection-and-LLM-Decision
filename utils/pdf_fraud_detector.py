@@ -2,7 +2,7 @@ import fitz  # PyMuPDF
 from pdfminer.high_level import extract_text as pdfminer_extract
 
 
-# 🔹 Fallback extractor (pdfminer)
+# Fallback extractor (pdfminer)
 def extract_hidden_text_fallback(file):
     try:
         file.seek(0)
@@ -20,9 +20,7 @@ def detect_hidden_text(uploaded_file):
 
         doc = fitz.open(stream=file_bytes, filetype="pdf")
 
-        # -----------------------------
         # RULE 1,2,3 → Span-based detection
-        # -----------------------------
         for page in doc:
 
             blocks = page.get_text("dict")["blocks"]
@@ -43,7 +41,6 @@ def detect_hidden_text(uploaded_file):
                         if not text:
                             continue
 
-                        # 🔥 FIX 1: Ignore formatting lines like ________
                         if set(text) == {"_"}:
                             continue
 
@@ -59,9 +56,7 @@ def detect_hidden_text(uploaded_file):
                         if size < 8 and len(text) <= 15 and text.isalpha():
                             return True, f"Suspicious hidden keyword detected: '{text}'"
 
-        # -----------------------------
         # RULE 4 → Extractor mismatch detection (NEW)
-        # -----------------------------
         uploaded_file.seek(0)
 
         normal_text = ""
@@ -78,9 +73,7 @@ def detect_hidden_text(uploaded_file):
         if hidden_text and len(hidden_text) > len(normal_text) * 1.3:
             return True, "Possible hidden/invisible text detected (text mismatch)"
 
-        # -----------------------------
         # FINAL → No fraud
-        # -----------------------------
         return False, ""
 
     except Exception as e:
