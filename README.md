@@ -75,14 +75,14 @@ This modular architecture ensures scalability, explainability, and precise autom
 
 ## 📶 ATS Dashboard Preview
 
-### **1. Input Section**
+### 1. Input Section
 
 This section allows HR to provide the Job Description, required skills, and minimum experience, and upload multiple candidate resumes. Once submitted, the system automatically evaluates all candidates.
 <p align="center">
   <img src="Output/Input.png" width="50%">
 </p>
 
-### **2. Candidate Evaluation Table**
+### 2. Candidate Evaluation Table
 
 Displays all candidates with:
  - **Score** – combined evaluation of skills, experience, and semantic matching
@@ -94,7 +94,16 @@ Displays all candidates with:
   <img src="Output/Candidate Evaluation Table.png" width="50%">
 </p>
 
-### **3. Candidate Distribution**
+### 3. AI Skill Gap Analysis
+Shows the AI and LLM-related skills of each candidate in a tabular format:
+ - Highlights skills present in the resume.
+ - Identifies missing or underrepresented AI skills for each candidate.
+ - Enables HR to quickly assess skill gaps and training needs.
+<p align="center">
+  <img src="Output/AI Skill Gap Analysis.png" width="60%">
+</p>
+
+### 4. Candidate Distribution
 
 A *donut chart* showing the overall evaluation outcome:
  - **Shortlisted** – candidates meeting requirements.
@@ -105,7 +114,7 @@ Gives an instant overview of candidate quality.
   <img src="Output/Candidate Distribution.png" width="50%">
 </p>
 
-### 4. **Candidate Score Comparison**
+### 5. Candidate Score Comparison
 
 A *bar chart* comparing candidate scores against the selection threshold:
  - Highlights top performers and borderline candidates.
@@ -114,7 +123,7 @@ A *bar chart* comparing candidate scores against the selection threshold:
   <img src="Output/Candidate Score Comparison.png" width="50%">
 </p>
 
-### **5. Score Distribution**
+### 6. Score Distribution
 
 A *histogram* showing the spread of candidate scores across ranges (0–20, 21–40, etc.):
  - Visualizes the proportion of weak, average, and strong candidates.
