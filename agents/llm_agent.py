@@ -5,35 +5,80 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 class LLMAgent:
 
-    def get_final_decision(self, resume, jd):
-        try:
-            prompt = f"""
-            You are an expert recruiter.
+    def get_skill_gap(self, resume, jd):
 
-            Decide if the candidate should be SELECTED or REJECTED.
+        models = [
+            "llama-3.1-8b-instant",
+            "llama3-8b-8192",
+            "mixtral-8x7b-32768"
+        ]
 
-            Rules:
-            - If most key skills match → SELECT
-            - If major skills missing → REJECT
+        prompt = f"""
+        You are an ATS system.
 
-            Answer ONLY one word:
-            SELECT or REJECT
+        STRICT RULES:
+        - Return ONLY missing skills
+        - Output must be comma separated
+        - DO NOT explain anything
+        - Max 6 skills
 
-            Resume:
-            {resume}
+        Resume:
+        {resume}
 
-            Job Description:
-            {jd}
-            """
+        Job Description:
+        {jd}
+        """
 
-            response = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0
-            )
+        for model in models:
+            try:
+                print(f"Trying model: {model}")
 
-            return response.choices[0].message.content.strip()
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.3
+                )
 
-        except Exception as e:
-            print("LLM decision error:", e)
-            return None
+                output = response.choices[0].message.content.strip()
+                print("LLM SUCCESS:", model)
+
+                # ---------- CLEAN OUTPUT ----------
+                output = output.strip()
+                output = output.replace("\n", " ")
+
+                bad_phrases = [
+                    "missing:",
+                    "based on",
+                    "the resume",
+                    "job description",
+                    "skills are",
+                    "following",
+                    "here are",
+                    "the following",
+                    "required skills",
+                    "resume:",
+                    "jd:"
+                ]
+
+                for phrase in bad_phrases:
+                    output = output.lower().replace(phrase, "")
+
+                skills_list = [s.strip().title() for s in output.split(",")]
+
+                skills_list = [
+                    s for s in skills_list
+                    if 2 < len(s) < 30 and not any(char.isdigit() for char in s)
+                ]
+
+                skills_list = list(dict.fromkeys(skills_list))
+                skills_list = skills_list[:6]
+
+                if skills_list:
+                    return "Missing: " + ", ".join(skills_list)
+
+                return ""
+
+            except Exception as e:
+                print(f"Model {model} failed:", e)
+
+        return ""
