@@ -132,6 +132,16 @@ A *histogram* showing the spread of candidate scores across ranges (0–20, 21�
   <img src="Output/Score Distribution.png" width="50%">
 </p>
 
+### 7. Candidate Notification Output
+
+These are the emails automatically sent to candidates after evaluation:
+ - **Status** – Shortlisted or Rejected
+ - **Reason** – Explanation for rejection or flagged issues (e.g., insufficient skills, suspicious keyword patterns)
+ - **Purpose** – Keeps candidates informed and maintains transparency in the recruitment process Supports data-driven decision-making for large applicant pools.
+<p align="center">
+  <img src="Output/Received Mails.png" width="50%">
+</p>
+
 ## 🏁 Conclusion
 
 SmartHireAI offers a next-generation recruitment pipeline, combining semantic evaluation, behavioral scoring, RAG-enhanced assessment, fraud detection, and LLM decision support. It ensures fair, transparent, and efficient candidate shortlisting, reducing HR workload while improving hiring accuracy.
