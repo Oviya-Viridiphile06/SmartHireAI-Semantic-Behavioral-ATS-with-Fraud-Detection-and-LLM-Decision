@@ -4,10 +4,11 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Virtual environment
+# Virtual environments
 venv/
 env/
 *.env
+.env.*   # Sometimes dotenv creates environment-specific files
 
 # Databases
 *.db
@@ -16,6 +17,8 @@ env/
 # OS / editor files
 .DS_Store
 Thumbs.db
+.idea/
+.vscode/
 
 # Streamlit logs — but keep config.toml
 .streamlit/*
@@ -23,3 +26,13 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Backup files
+*~
+*.bak
+
+# Ignore output folders
+outputs/
