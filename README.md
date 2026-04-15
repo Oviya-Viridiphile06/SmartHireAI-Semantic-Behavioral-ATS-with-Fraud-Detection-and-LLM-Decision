@@ -49,6 +49,38 @@ This modular architecture ensures scalability, explainability, and precise autom
     - Rejected candidates are provided with skill gap insights.
 8. Email Notification
     - Automated candidate communication triggered with personalized feedback.
+
+## 🧠 ATS Workflow
+
+```mermaid
+flowchart TD
+
+A[HR Inputs\nJob Description + Resumes] --> B[Resume Processing Agent]
+
+B --> C[Extraction & Cleaning\nPDF/DOCX Parsing\nName • Email • Skills • \nExperience]
+
+C --> D[Fraud Detection Agent\nKeyword Stuffing\nHidden Text\nDuplicate Patterns]
+
+D -->|Valid Resume| E[Hybrid Scoring Engine\nSemantic + Keyword + \nExperience + Skill Match]
+
+D -->|Invalid Resume| X[Reject Resume\nReason: Fraud Detected]
+
+E --> F[Decision Engine\nScore Threshold + JD \nMatching Rules]
+
+F --> G{Borderline Candidate?}
+
+G -->|Yes| H[LLM Review Agent\nGroq Contextual Evaluation]
+
+G -->|No| I[Final Decision Engine]
+
+H --> I
+
+I --> J[Final Output\nShortlist / Reject]
+
+J --> K[Skill Gap Analysis\nMissing Skills vs JD Mapping]
+
+K --> L[Email Notification Agent\nResult + Feedback Sent]
+```
   
 ## 🛠️ Technology Stack
 
